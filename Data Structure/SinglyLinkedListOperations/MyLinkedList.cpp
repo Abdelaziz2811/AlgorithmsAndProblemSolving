@@ -12,7 +12,7 @@ int main() {
 	MyDbLinkedList.InsertAtBeginning(3);
 	MyDbLinkedList.InsertAtBeginning(2);
 	MyDbLinkedList.InsertAtBeginning(1);
-
+	
 	cout << "\n * Linked List Content : ";
 	MyDbLinkedList.PrintList();
 

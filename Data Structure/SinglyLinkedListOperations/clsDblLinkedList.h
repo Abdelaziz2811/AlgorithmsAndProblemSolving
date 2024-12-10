@@ -7,21 +7,25 @@ using namespace std;
 template <class T> class clsDblLinkedList {
 
 public:
-	static class Node {
+	class Node {
 	
 	public:
 		T Value;
 		Node* next;
+		Node* prev;
 	};
 	
 	Node* Head = NULL;
-
+	
 	void InsertAtBeginning(T Value) {
 
 		Node* new_node = new Node();
 		new_node->Value = Value;
+		new_node->prev = NULL;
 
 		new_node->next = Head;
+		if (Head != NULL)
+			Head->prev = new_node;
 		Head = new_node;
 	}
 	
@@ -55,16 +59,21 @@ public:
 		return NULL;
 	}
 	
-	void InsertAfter(Node* Prev_node, T Value) {
+	void InsertAfter(Node* Current, T Value) {
 
-		if (Prev_node == NULL)
+		if (Current == NULL)
 			return;
 
 		Node* new_node = new Node();
 		new_node->Value = Value;
 
-		new_node->next = Prev_node->next;
-		Prev_node->next = new_node;
+		new_node->next = Current->next;
+		new_node->prev = Current;
+
+		if (Current->next != NULL)
+			Current->next->prev = new_node;
+
+		Current->next = new_node;
 	}
 	
 	void InsertAtEnd(T Value) {
@@ -76,6 +85,7 @@ public:
 		if (Head == NULL) {
 
 			Head = new_node;
+			new_node->prev = NULL;
 			return;
 		}
 
@@ -85,6 +95,7 @@ public:
 			LastNode = LastNode->next;
 		}
 		LastNode->next = new_node;
+		new_node->prev = LastNode;
 	}
 	
 	void DeleteNode(Node* NodeToDelete) {
@@ -95,18 +106,16 @@ public:
 		if (Head == NodeToDelete) {
 
 			Head = NodeToDelete->next;
+			NodeToDelete->next->prev = NULL;
 			delete NodeToDelete;
 			return;
 		}
 
-		Node* Current = Head, * Prev = Head;
-		while (Current != NULL && Current->Value != NodeToDelete->Value) {
+		if (NodeToDelete->next != NULL)
+			NodeToDelete->next->prev = NodeToDelete->prev;
+		if (NodeToDelete->prev != NULL)
+			NodeToDelete->prev->next = NodeToDelete->next;
 
-			Prev = Current;
-			Current = Current->next;
-		}
-		
-		Prev->next = Current->next;
 		delete NodeToDelete;
 	}
 	
@@ -118,6 +127,9 @@ public:
 		Node* FirstNode = Head;
 
 		Head = FirstNode->next;
+		if (Head != NULL)
+			Head->prev = NULL;
+
 		delete FirstNode;
 	}
 	
@@ -126,24 +138,21 @@ public:
 		if (Head == NULL)
 			return;
 
-		Node* LastNode = Head;
-		
-		if (LastNode->next == NULL) {
-
+		if (Head->next == NULL) {
+			
+			delete Head;
 			Head = NULL;
-			delete LastNode;
 			return;
 		}
-
-		Node* Prev = Head;
+		
+		Node* LastNode = Head;
 
 		while (LastNode->next != NULL) {
 
-			Prev = LastNode;
 			LastNode = LastNode->next;
 		}
 
-		Prev->next = NULL;
+		LastNode->prev->next = NULL;
 		delete LastNode;
 	}
 
