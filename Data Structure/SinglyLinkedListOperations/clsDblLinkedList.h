@@ -98,7 +98,7 @@ public:
 		new_node->prev = LastNode;
 	}
 	
-	void DeleteNode(Node* NodeToDelete) {
+	void DeleteNode(Node*& NodeToDelete) {
 
 		if (Head == NULL || NodeToDelete == NULL)
 			return;
