@@ -48,5 +48,12 @@ int main() {
 	// Extension Number 1 (Size)
 	cout << "\n * Number of Items in the linked list = " << MyDbLinkedList.Size() << endl;
 
+	// Extension Number 2 (IsEmpty)
+
+	if (MyDbLinkedList.IsEmpty())
+		cout << "\n * Yes Linked List is Empty\n";
+	else
+		cout << "\n * No Linked List is Not Empty\n";
+
 	return 0;
 }
