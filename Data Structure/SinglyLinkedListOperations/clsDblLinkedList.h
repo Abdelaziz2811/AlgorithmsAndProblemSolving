@@ -106,15 +106,16 @@ public:
 		if (Head == NodeToDelete) {
 
 			Head = NodeToDelete->next;
-			NodeToDelete->next->prev = NULL;
-			delete NodeToDelete;
-			return;
 		}
 
-		if (NodeToDelete->next != NULL)
+		if (NodeToDelete->next != NULL) {
+
 			NodeToDelete->next->prev = NodeToDelete->prev;
-		if (NodeToDelete->prev != NULL)
+		}
+		if (NodeToDelete->prev != NULL) {
+
 			NodeToDelete->prev->next = NodeToDelete->next;
+		}
 
 		delete NodeToDelete;
 	}
@@ -157,4 +158,3 @@ public:
 	}
 
 };
-
