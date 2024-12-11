@@ -171,15 +171,23 @@ public:
 
 		_Size--;
 	}
-
+	// Extension Number 1 (Size)
 	int Size() {
 
 		return _Size;
 	}
-
+	// Extension Number 2 (IsEmpty)
 	bool IsEmpty() {
 
 		return _Size == NULL;
+	}
+	// Extension Number 3 (Clear)
+	void Clear() {
+
+		while (Head != NULL) {
+		
+			DeleteFirstNode();
+		}
 	}
 
 };

@@ -55,5 +55,12 @@ int main() {
 	else
 		cout << "\n * No Linked List is Not Empty\n";
 
+	// Extension Number 3 (Clear)
+
+	cout << "\n * Executing .Clear()\n";
+	MyDbLinkedList.Clear();
+	cout << "\n * Number of Items in the linked list = " << MyDbLinkedList.Size() << endl;
+
+
 	return 0;
 }
