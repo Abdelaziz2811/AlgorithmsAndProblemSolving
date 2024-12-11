@@ -45,5 +45,8 @@ int main() {
 	cout << "\n * Linked List Content after Delete Last Node : ";
 	MyDbLinkedList.PrintList();
 
+	// Extension Number 1 (Size)
+	cout << "\n * Number of Items in the linked list = " << MyDbLinkedList.Size() << endl;
+
 	return 0;
 }
