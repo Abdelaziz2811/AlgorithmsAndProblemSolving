@@ -83,6 +83,12 @@ int main() {
 	cout << "\n * Linked List Content After Update Item Value at index 2 To 500 : ";
 	MyDbLinkedList.PrintList();
 
+	// Extension Number 8 (Insert Item After spcific index)
+
+	MyDbLinkedList.InsertAfter(2, 500);
+
+	cout << "\n * Linked List Content After Insert 500 after Item with value 3 : ";
+	MyDbLinkedList.PrintList();
 
 	return 0;
 }

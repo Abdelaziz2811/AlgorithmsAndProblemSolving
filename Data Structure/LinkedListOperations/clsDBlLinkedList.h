@@ -246,5 +246,18 @@ public:
 		else
 			return false;
 	}
+	// Extension Number 8 (Insert Item After spcific index)
+	bool InsertAfter(int Index, T Value) {
+
+		Node* Item = GetNode(Index);
+
+		if (Item != NULL) {
+
+			InsertAfter(Item, Value);
+			return true;
+		}
+		else
+			return false;
+	}
 
 };
