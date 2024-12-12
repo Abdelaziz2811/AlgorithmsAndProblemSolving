@@ -189,5 +189,23 @@ public:
 			DeleteFirstNode();
 		}
 	}
+	// Extension Number 4 (Reverse)
+	void Reverse() {
+
+		Node* Current = Head;
+		Node* Temp = nullptr;
+
+		while (Current != nullptr) {
+
+			Temp = Current->prev;
+			Current->prev = Current->next;
+			Current->next = Temp;
+
+			Current = Current->prev;
+
+			if (Current != nullptr)
+				Head = Current;
+		}
+	}
 
 };
