@@ -233,6 +233,18 @@ public:
 		else
 			return Item->Value;
 	}
+	// Extension Number 7 (UpdateItemValue)
+	bool UpdateItem(int Index, T NewValue) {
 
+		Node* Item = GetNode(Index);
+
+		if (Item != NULL) {
+
+			Item->Value = NewValue;
+			return true;
+		}
+		else
+			return false;
+	}
 
 };

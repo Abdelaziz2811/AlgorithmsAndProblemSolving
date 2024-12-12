@@ -76,5 +76,13 @@ int main() {
 
 	cout << "\n * Item [2] Value is : " << MyDbLinkedList.GetItem(2) << endl;
 
+	// Extension Number 7 (UpdateItemValue)
+
+	MyDbLinkedList.UpdateItem(2, 500);
+
+	cout << "\n * Linked List Content After Update Item Value at index 2 To 500 : ";
+	MyDbLinkedList.PrintList();
+
+
 	return 0;
 }
