@@ -67,5 +67,10 @@ int main() {
 	cout << "\n * Linked List content after reverse : ";
 	MyDbLinkedList.PrintList();
 
+	// Extension Number 5 (GetNode --> by index)
+
+	clsDblLinkedList <int>::Node* N = MyDbLinkedList.GetNode(0);
+	cout << "\nNode Value is : " << N->Value << endl;
+
 	return 0;
 }

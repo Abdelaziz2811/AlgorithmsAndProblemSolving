@@ -207,5 +207,21 @@ public:
 				Head = Current;
 		}
 	}
+	// Extension Number 5 (GetNode --> by index)
+	Node* GetNode(int Index) {
+
+		if (Index >= _Size || Index < 0 || Head == NULL)
+			return NULL;
+
+		Node* Current = Head;
+
+		while (Index != 0) {
+
+			Current = Current->next;
+			Index--;
+		}
+
+		return Current;
+	}
 
 };
