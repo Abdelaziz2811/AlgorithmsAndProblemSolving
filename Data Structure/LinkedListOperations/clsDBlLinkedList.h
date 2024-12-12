@@ -223,5 +223,16 @@ public:
 
 		return Current;
 	}
+	// Extension Number 6 (GetItem --> Item Value Using GetNode)
+	T GetItem(int Index) {
+
+		Node* Item = GetNode(Index);
+		
+		if (Item == NULL)
+			return NULL;
+		else
+			return Item->Value;
+	}
+
 
 };

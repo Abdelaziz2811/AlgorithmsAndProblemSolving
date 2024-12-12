@@ -72,5 +72,9 @@ int main() {
 	clsDblLinkedList <int>::Node* N = MyDbLinkedList.GetNode(0);
 	cout << "\nNode Value is : " << N->Value << endl;
 
+	// Extension Number 6 (GetItem --> Item Value Using GetNode)
+
+	cout << "\n * Item [2] Value is : " << MyDbLinkedList.GetItem(2) << endl;
+
 	return 0;
 }
