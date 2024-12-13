@@ -45,12 +45,12 @@ int main() {
 	MyStack.Print();
 
 	// Extension #5
-	MyStack.InsertAtTop(1000);
+	MyStack.InsertAtFront(1000);
 	cout << "\n * Stack after insert 1000 at top : ";
 	MyStack.Print();
 
 	// Extension #6
-	MyStack.InsertAtBottom(2000);
+	MyStack.InsertAtBack(2000);
 	cout << "\n * Stack after insert 2000 at Bottom : ";
 	MyStack.Print();
 
