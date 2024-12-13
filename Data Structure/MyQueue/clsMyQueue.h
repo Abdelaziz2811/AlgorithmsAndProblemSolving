@@ -11,9 +11,9 @@ protected:
 	clsDblLinkedList <T> _MyList; // This is called composition (create an object of class inside another class)
 
 public:
-	void push(T Value) {
+	void push(T Item) {
 
-		_MyList.InsertAtEnd(Value);
+		_MyList.InsertAtEnd(Item);
 	}
 
 	void Print() {
@@ -39,6 +39,41 @@ public:
 	void pop() {
 
 		_MyList.DeleteFirstNode();
+	}
+
+	T GetItem(int Index) {
+
+		return _MyList.GetItem(Index);
+	}
+
+	void Reverse() {
+
+		_MyList.Reverse();
+	}
+
+	bool UpdateItem(int Index, T NewValue) {
+
+		return _MyList.UpdateItem(Index, NewValue);
+	}
+
+	bool InsertAfter(int Index, T Value) {
+
+		return _MyList.InsertAfter(Index, Value);
+	}
+
+	void InsertAtFront(T Item) {
+
+		_MyList.InsertAtBeginning(Item);
+	}
+
+	void InsertAtBack(T Item) {
+
+		_MyList.InsertAtEnd(Item);
+	}
+
+	void Clear() {
+
+		_MyList.Clear();
 	}
 
 };
