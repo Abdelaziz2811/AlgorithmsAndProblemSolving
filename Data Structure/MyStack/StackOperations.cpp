@@ -26,5 +26,38 @@ int main() {
 	cout << "\n\n * Satck Content after pop : ";
 	MyStack.Print();
 
+	// Extension #1
+	cout << "\n * Item(2) : " << MyStack.GetItem(2);
+
+	// Extension #2
+	MyStack.Reverse();
+	cout << "\n\n * Stack after Reverse : ";
+	MyStack.Print();
+
+	// Extension #3
+	MyStack.UpdateItem(2, 600);
+	cout << "\n * Stack after update item(2) to 600 : ";
+	MyStack.Print();
+
+	// Extension #4
+	MyStack.InsertAfter(2, 800);
+	cout << "\n * Stack after insert 800 after item(2) : ";
+	MyStack.Print();
+
+	// Extension #5
+	MyStack.InsertAtTop(1000);
+	cout << "\n * Stack after insert 1000 at top : ";
+	MyStack.Print();
+
+	// Extension #6
+	MyStack.InsertAtBottom(2000);
+	cout << "\n * Stack after insert 2000 at Bottom : ";
+	MyStack.Print();
+
+	// Extension #7
+	MyStack.Clear();
+	cout << "\n * Stack after Clear : ";
+	MyStack.Print();
+
     return 0;
 }

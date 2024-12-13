@@ -40,7 +40,40 @@ public:
 		_MyList.DeleteFirstNode();
 	}
 
+	T GetItem(int Index) {
 
+		return _MyList.GetItem(Index);
+	}
+
+	void Reverse() {
+
+		_MyList.Reverse();
+	}
+
+	bool UpdateItem(int Index, T NewValue) {
+
+		return _MyList.UpdateItem(Index, NewValue);
+	}
+
+	void InsertAfter(int Index, T Value) {
+
+		_MyList.InsertAfter(Index, Value);
+	}
+
+	void InsertAtTop(T Value) {
+
+		_MyList.InsertAtBeginning(Value);
+	}
+
+	void InsertAtBottom(T Value) {
+
+		_MyList.InsertAtEnd(Value);
+	}
+
+	void Clear() {
+
+		_MyList.Clear();
+	}
 
 };
 
