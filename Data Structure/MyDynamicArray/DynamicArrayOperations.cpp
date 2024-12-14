@@ -22,14 +22,14 @@ int main() {
 	// Case 1 :
 	MyDaynamicArray.Resize(2);
 
-	cout << "\n Array Size : " << MyDaynamicArray.Size() << endl;
+	cout << "\n Array Size after resize to 2 : " << MyDaynamicArray.Size() << endl;
 
 	cout << "\n Array Items after resize to 2 : ";
 	MyDaynamicArray.Print();
 	// Case 2 :
-	MyDaynamicArray.Resize(0);
+	MyDaynamicArray.Resize(10);
 
-	cout << "\n Array Size : " << MyDaynamicArray.Size() << endl;
+	cout << "\n Array Size after resize to 10 : " << MyDaynamicArray.Size() << endl;
 
 	cout << "\n Array Items after resize to 10 : ";
 	MyDaynamicArray.Print();
