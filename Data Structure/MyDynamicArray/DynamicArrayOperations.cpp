@@ -46,6 +46,11 @@ int main() {
 	cout << "\n Array Items after clear : ";
 	MyDaynamicArray.Print();
 
+	// Extension #5 Delete Item At specific index
+
+	MyDaynamicArray.DeleteItemAt(2);
+	cout << "\n Array items after delete Item(2) : ";
+	MyDaynamicArray.Print();
 
 	return 0;
 }
