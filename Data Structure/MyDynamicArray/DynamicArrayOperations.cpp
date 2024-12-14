@@ -34,5 +34,18 @@ int main() {
 	cout << "\n Array Items after resize to 10 : ";
 	MyDaynamicArray.Print();
 
+	// Extensions #2 To #4
+	
+	cout << "\n Item(2) : " << MyDaynamicArray.GetItem(2) << endl;
+
+	MyDaynamicArray.Reverse();
+	cout << "\n Array Items after Reverse : ";
+	MyDaynamicArray.Print();
+
+	MyDaynamicArray.Clear();
+	cout << "\n Array Items after clear : ";
+	MyDaynamicArray.Print();
+
+
 	return 0;
 }

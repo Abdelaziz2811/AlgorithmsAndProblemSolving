@@ -53,7 +53,7 @@ public:
 		cout << endl;
 	}
 
-    	void Resize(int NewSize) {
+    void Resize(int NewSize) {
 
 		if (NewSize < 0)
 			NewSize = 0;
@@ -69,6 +69,32 @@ public:
 
 		delete[] OriginalArray;
 		OriginalArray = _TempArray;
+	}
+
+	T GetItem(int Index) {
+
+		return OriginalArray[Index];
+		// or return *(OriginalArray + Index);
+	}
+
+	void Reverse() {
+
+		_TempArray = new T[_Size];
+
+		for (short i = 0; i < _Size; i++) {
+
+			_TempArray[i] = OriginalArray[_Size - i - 1];
+		}
+
+		OriginalArray = _TempArray;
+	}
+
+	void Clear() {
+
+		_Size = 0;
+
+		delete[] OriginalArray;
+		OriginalArray = new T[_Size];
 	}
 
 };
