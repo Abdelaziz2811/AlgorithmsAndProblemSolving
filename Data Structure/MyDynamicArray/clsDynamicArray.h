@@ -53,5 +53,23 @@ public:
 		cout << endl;
 	}
 
+    	void Resize(int NewSize) {
+
+		if (NewSize < 0)
+			NewSize = 0;
+
+		_Size = NewSize;
+
+		_TempArray = new T[NewSize];
+
+		for (short i = 0; i < NewSize; i++) {
+
+			_TempArray[i] = OriginalArray[i];
+		}
+
+		delete[] OriginalArray;
+		OriginalArray = _TempArray;
+	}
+
 };
 
