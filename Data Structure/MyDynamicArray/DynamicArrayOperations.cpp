@@ -52,5 +52,17 @@ int main() {
 	cout << "\n Array items after delete Item(2) : ";
 	MyDaynamicArray.Print();
 
+	// Extension #6 Delete First Item
+
+	MyDaynamicArray.DeleteFirstItem();
+	cout << "\n Array items after delete first item : ";
+	MyDaynamicArray.Print();
+
+	// Extension #6 Delete Last Item
+
+	MyDaynamicArray.DeleteLastItem();
+	cout << "\n Array items after delete last item : ";
+	MyDaynamicArray.Print();
+
 	return 0;
 }
