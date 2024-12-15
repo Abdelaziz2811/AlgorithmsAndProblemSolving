@@ -86,6 +86,33 @@ int main() {
 	MyDaynamicArray.Print();
 	cout << " Size : " << MyDaynamicArray.Size();
 
+	// Extension #11 Insert At Beginning
+
+	MyDaynamicArray.InsertAtBeginning(400);
+	cout << "\n Array Items after insert 400 at Beginning : ";
+	MyDaynamicArray.Print();
+	cout << " Size : " << MyDaynamicArray.Size() << endl;
+
+	// Extension #12 Insert before an specific index
+
+	MyDaynamicArray.InsertBefore(2, 500);
+	cout << "\n Array Items after insert 500 before index 2 : ";
+	MyDaynamicArray.Print();
+	cout << " Size : " << MyDaynamicArray.Size() << endl;
+
+	// Extension #13 Insert after an specific index
+
+	MyDaynamicArray.InsertAfter(2, 600);
+	cout << "\n Array Items after insert 600 after index 2 : ";
+	MyDaynamicArray.Print();
+	cout << " Size : " << MyDaynamicArray.Size() << endl;
+
+	// Extension #14 Insert At end
+
+	MyDaynamicArray.InsertAtEnd(800);
+	cout << "\n Array Items after insert 800 At end : ";
+	MyDaynamicArray.Print();
+	cout << " Size : " << MyDaynamicArray.Size() << endl;
 
 	return 0;
 }

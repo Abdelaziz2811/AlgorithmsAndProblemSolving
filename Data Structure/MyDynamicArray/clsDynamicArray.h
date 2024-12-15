@@ -103,9 +103,8 @@ public:
 			return false;
 
 		_TempArray = new T[_Size - 1];
-		short j = 0;
 
-		for (short i = 0; i < _Size; i++) {
+		for (short i = 0, j = 0; i < _Size; i++) {
 
 			if (Index != i) {
 
@@ -187,6 +186,32 @@ public:
 
 		OriginalArray = _TempArray;
 		return true;
+	}
+
+	bool InsertAtBeginning(T Value) {
+
+		return InsertAt(0, Value);
+	}
+
+	bool InsertBefore(int index, T Value) {
+
+		if (index < 1)
+			return InsertAt(0, Value);
+		else
+			return InsertAt(index - 1, Value);
+	}
+
+	bool InsertAfter(int index, T Value) {
+
+		if (index >= _Size)
+			return InsertAt(_Size, Value);
+		else
+			return InsertAt(index + 1, Value);
+	}
+
+	bool InsertAtEnd(T Value) {
+
+		return InsertAt(_Size, Value);
 	}
 
 };
