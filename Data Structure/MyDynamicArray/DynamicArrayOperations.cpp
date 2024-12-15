@@ -58,11 +58,26 @@ int main() {
 	cout << "\n Array items after delete first item : ";
 	MyDaynamicArray.Print();
 
-	// Extension #6 Delete Last Item
+	// Extension #7 Delete Last Item
 
 	MyDaynamicArray.DeleteLastItem();
 	cout << "\n Array items after delete last item : ";
 	MyDaynamicArray.Print();
+
+	// Extension #8 Find index by value
+
+	int index = MyDaynamicArray.Find(30);
+	if (index == -1)
+		cout << "\n Item with value 30 is not found" << endl;
+	else
+		cout << "\n Item with value 30 is found at index " << index << endl;
+	
+	// Extension #9 Delete item through its value
+
+	MyDaynamicArray.DeleteItem(30);
+	cout << "\n Array Items after delete 30 : ";
+	MyDaynamicArray.Print();
+	cout << " Size : " << MyDaynamicArray.Size();
 
 	return 0;
 }

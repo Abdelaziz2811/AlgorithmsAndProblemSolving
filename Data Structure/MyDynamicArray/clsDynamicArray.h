@@ -133,5 +133,31 @@ public:
 		DeleteItemAt(_Size - 1);
 	}
 
+		int Find(T Value) {
+
+		for (short i = 0; i < _Size; i++) {
+
+			if (OriginalArray[i] == Value)
+				return i;
+		}
+		return -1;
+	}
+
+	bool DeleteItem(T Value) {
+
+		int index = Find(Value);
+
+		if (index == -1) {
+
+			return false;
+		}
+		else {
+
+			DeleteItemAt(index);
+			return true;
+		}
+		// -> This will work too : return DeleteItemAt(Find(Value));
+	}
+
 };
 
