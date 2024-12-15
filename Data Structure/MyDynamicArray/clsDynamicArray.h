@@ -159,5 +159,35 @@ public:
 		// -> This will work too : return DeleteItemAt(Find(Value));
 	}
 
+	bool InsertAt(int index, T Value) {
+
+		if (index >= _Size || index < 0)
+			return false;
+
+		_Size++;
+
+		_TempArray = new T[_Size];
+		
+		// Copy all itmes before index
+		for (short i = 0; i < index; i++) {
+
+			_TempArray[i] = OriginalArray[i];
+		}
+
+		// Set value of inserted index
+		_TempArray[index] = Value;
+
+		// Copy all items after index
+		for (short i = index; i < _Size - 1; i++) {
+
+			_TempArray[i + 1] = OriginalArray[i];
+		}
+
+		delete[] OriginalArray;
+
+		OriginalArray = _TempArray;
+		return true;
+	}
+
 };
 

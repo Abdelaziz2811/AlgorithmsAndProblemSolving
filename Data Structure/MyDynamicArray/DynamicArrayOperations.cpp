@@ -79,5 +79,13 @@ int main() {
 	MyDaynamicArray.Print();
 	cout << " Size : " << MyDaynamicArray.Size();
 
+	// Extension #10 insert item at specific index
+
+	MyDaynamicArray.InsertAt(2, 500);
+	cout << "\n Array Items after insert 500 at index 2 : ";
+	MyDaynamicArray.Print();
+	cout << " Size : " << MyDaynamicArray.Size();
+
+
 	return 0;
 }
