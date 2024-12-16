@@ -1,46 +1,58 @@
 #include <iostream>
 #include <string>
+#include <stack>
+#include <map>
 
 using namespace std;
 
 class Solution {
 
 public:
-    static bool isValid(string s) {
+
+static bool isValid(string s) {
         
-        short pos = 0;
+        if (s.length() % 2 != 0)
+            return false;
 
-        if ((pos = s.find(123) != s.npos)) {
+        stack <char> OpenParenthes;
+        map <char, char> CloseParenthes;
+        
+        CloseParenthes[')'] = '(';
+        CloseParenthes['}'] = '{';
+        CloseParenthes[']'] = '[';
 
-            for (short i = pos; i < s.size(); i++) {
+        for (short i = 0; i < s.length(); i++) {
 
-                if (s.find(125) == s.npos)
+            if (s[i] == '(' || s[i] == '[' || s[i] == '{') {
+
+                OpenParenthes.push(s[i]);
+            }
+            else {
+
+                if (OpenParenthes.empty())
                     return false;
+
+                if (OpenParenthes.top() != CloseParenthes[s[i]])
+                    return false;
+                
+            }
+
+            if (!OpenParenthes.empty()) {
+
+                if (OpenParenthes.top() == CloseParenthes[s[i]]
+                 || OpenParenthes.top() == CloseParenthes[s[i]]
+                 || OpenParenthes.top() == CloseParenthes[s[i]]) {
+
+                    OpenParenthes.pop();
+                }
             }
         }
-        else if ((pos = s.find(91) != s.npos)) {
-
-            for (short i = pos; i < s.size(); i++) {
-
-                if (s.find(93) == s.npos)
-                    return false;
-            }
-        }
-        else if ((pos = s.find(40) != s.npos)) {
-
-            for (short i = pos; i < s.size(); i++) {
-
-                if (s.find(41) == s.npos)
-                    return false;
-            }
-        }
-
-        return true;
+        return OpenParenthes.empty();
     }
 };
 int main() {
 
-    cout << Solution::isValid("()[]{}");
+    cout << Solution::isValid("{][}");
 
     return 0;
 }
