@@ -1,44 +1,70 @@
 #include <iostream>
 #include <string>
 #include <stack>
+#include <vector>
 
 using namespace std;
 
-    string simplifyPath(string path) {
+vector <string> Split(string str, string Delim) {
 
-        stack <char> stc;
-        stack <char> stc2;
-        int DotPos = -1;
-        string SimplifyPath = "/";
+    short pos;
+    string word;
+    vector <string> vWords;
 
-        for (short i = 0; i < path.length(); i++) {
+    while ((pos = str.find(Delim)) != str.npos) {
 
-            if (path[i] != '/' && path[i] != '.') {
+        word = str.substr(0, pos);
+        if (word != "") {
 
-                stc.push(path[i]);
-            }
-            if (path[i] == '.') {
-
-                if (DotPos == i - 1 && !stc.empty()) {
-
-                    stc.pop();
-                }
-                DotPos = i;
-            }
+            vWords.push_back(word);
         }
-        while (!stc.empty()) {
+        str.erase(0, pos + Delim.length());
+    }
+    if (str != "") {
 
-            stc2.push(stc.top());
+        vWords.push_back(str);
+    }
+    return vWords;
+}
+
+string simplifyPath(string path) {
+
+    stack <string> stc;
+    stack <string> stc2;
+    int DotPos = -1;
+    string SimplifyPath;
+
+    vector <string> vPaths = Split(path, "/");
+
+    for (string& Path : vPaths) {
+
+        if (Path != ".." && Path != ".")
+            stc.push(Path);
+
+        if (Path == ".." && !stc.empty()) {
+
             stc.pop();
         }
-        while (!stc2.empty()) {
-
-                SimplifyPath += stc2.top();
-                SimplifyPath += "/";
-                stc2.pop();
-        }
-        return SimplifyPath.substr(0, SimplifyPath.length() - 1);
     }
+
+    while (!stc.empty()) {
+
+        stc2.push(stc.top());
+        stc.pop();
+    }
+    while (!stc2.empty()) {
+
+        SimplifyPath += "/";
+        SimplifyPath += stc2.top();
+
+        stc2.pop();
+    }
+    
+    if (SimplifyPath == "")
+        SimplifyPath = "/";
+
+    return SimplifyPath;
+}
 
 int main() {
     
