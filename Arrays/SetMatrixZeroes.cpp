@@ -8,9 +8,16 @@ using namespace std;
         short row, clm;
         vector<vector<int>> matrix2 = matrix;
 
+        int Clms = 0;
+
+        for (int& number : matrix[0]) {
+
+            Clms++;
+        }
+
         for (short i = 0; i < matrix.size(); i++) {
 
-            for (short j = 0; j < matrix.size(); j++) {
+            for (short j = 0; j < Clms; j++) {
 
                 if (matrix[i][j] == 0) {
 
