@@ -23,12 +23,12 @@ using namespace std;
 
                     row = i;
                     clm = j;
-                     // set row value to 0
-                    for (short c = 0; c < matrix2.size(); c++) {
+                     // set columns value to 0
+                    for (short c = 0; c < Clms; c++) {
 
                         matrix2[row][c] = 0;
                     }
-                    // set columns value to 0
+                     // set row value to 0
                     for (short r = 0; r < matrix2.size(); r++) {
 
                         matrix2[r][clm] = 0;
