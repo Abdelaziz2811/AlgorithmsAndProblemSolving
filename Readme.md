@@ -33,7 +33,7 @@ cpp-algorithms/
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/yourusername/cpp-algorithms.git
+   git clone https://github.com/Abdelaziz2811/AlgorithmsAndProblemSolving.git
    ```
 
 2. Ensure you have:

@@ -156,6 +156,7 @@ public:
 			
 			delete Head;
 			Head = NULL;
+			_Size--;
 			return;
 		}
 		
