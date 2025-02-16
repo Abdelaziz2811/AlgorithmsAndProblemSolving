@@ -3,7 +3,7 @@
 
 using namespace std;
 
-vector<int> TwoSum(vector<int>& numbers, int target) {
+vector<int> TwoSum(vector<int> numbers, int target) {
         
     if (numbers.empty()) return {0, 0};
 
@@ -28,8 +28,12 @@ vector<int> TwoSum(vector<int>& numbers, int target) {
 
 int main() {
 
-    cout << "Case 1 :"<< endl;
-    TwoSum()
+    cout << "Test :"<< endl;
+    vector <int> vTwoNumbersPos;
+    vTwoNumbersPos = TwoSum({2,7,11,15}, 9);
 
+    for (int & Pos : vTwoNumbersPos)
+        cout << Pos << ' ';
+        
     return 0;
 }
