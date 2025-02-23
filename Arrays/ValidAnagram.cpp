@@ -3,6 +3,7 @@
 #include <vector>
 
 using namespace std;
+
 bool IssLExistIntL(char tL, string& s) {
 
     for (auto sL = s.begin(); sL != s.end(); sL++) {
@@ -28,6 +29,7 @@ bool IsAnagram(string s, string t) {
 
 int main()
 {
+
     cout << "Case 1 : 'anagram', 'nagaram' :" << IsAnagram("anagram", "nagaram") << endl;
     cout << "Case 2 : 'rat', 'car' :" << IsAnagram("rat", "car") << endl;
 
