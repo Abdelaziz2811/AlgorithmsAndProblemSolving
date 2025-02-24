@@ -22,7 +22,7 @@ vector<string> letterCombinations(string digits) {
                 
                 Combination.push_back(letterCombination);
             }
-            else Combination.push_back(j);
+            else Combination.push_back(keypad[j]);
         }
     }
 
