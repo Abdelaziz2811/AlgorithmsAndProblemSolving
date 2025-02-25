@@ -14,15 +14,18 @@ vector<string> letterCombinations(string digits) {
     string letterCombination;
     vector<string> Combination;
 
-    for (short i = stoi(to_string(digits[0])); i < stoi(to_string(digits[digits.length() - 1])); i++) {
+    for (short i = stoi(to_string(digits[0])); i < stoi(to_string(digits[digits.length() - 1])) - 1; i++) {
 
-        for (short j = 0; j < keypad[i].length(); j++) {
+        if (digits.length() > 1) {
+            
+            for(char C_1 : keypad[i]) {
 
-            if (digits.length() > 1) {
-                
-                Combination.push_back(letterCombination);
+                for (char C_2 : keypad[i + 1]) {
+
+                    letterCombination = C_1 + C_2;
+                    Combination.push_back(letterCombination);
+                }
             }
-            else Combination.push_back(keypad[j]);
         }
     }
 
@@ -30,6 +33,13 @@ vector<string> letterCombinations(string digits) {
 }
 
 int main() {
+
+    string digits = "23";
+    vector<string> Combination = letterCombinations(digits);
+    
+    for(string& s : Combination) {
+        cout << s << " ";
+    }
 
     return 0;
 }
